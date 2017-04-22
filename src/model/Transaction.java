@@ -22,10 +22,13 @@ public class Transaction {
         
     };
     
+    public float getAmount(){
+        return amount;
+    }
     public boolean makeTransaction(String from, String to, float amount){
         // call API to make transaction
-        
-        return true; // return true if transaction succeed
+        //succeed = succeed making transaction through third party
+        return succeed; // return true if transaction succeed
     }
 
 }

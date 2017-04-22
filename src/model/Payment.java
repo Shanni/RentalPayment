@@ -56,11 +56,12 @@ public class Payment {
     }
     public boolean makePayment(PaymentMethod method, Transaction transaction){
         // already made payment
-        if(transaction != null) return false;
+        if(transaction != null || !transaction.succeed) return false;
         
-        if(!transaction.succeed) return false;
+        if(transaction.getAmount() == this.amountToPay) 
+            completed = true;
         
-        return true;
+        return completed;
         
     }
     
